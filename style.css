@@ -11,16 +11,22 @@ body{
     margin: auto;
     opacity: 0.8;
 }
-
+h1{
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+     
+}
 .container{
     border: 2px solid black;
-    width: 50vw;
+    width: 60vw;
     height: 30vw;
     margin: auto;
     padding: 4px;
     overflow-y: auto;
     margin-bottom: 12px;
     margin-top: 6px;
+    border-radius: 10px;
 }
 
 .message{
@@ -43,6 +49,9 @@ body{
      float: left;
      clear: both;
 }
+.mid{
+    margin: auto;
+}
 
 #send-container{
     display: flex;
@@ -52,7 +61,7 @@ body{
 }
 
 #messageInp{
-    width: 42vw;
+    width: 50vw;
     border: 2px solid black;
     border-radius: 5px;
     padding: 6px;
@@ -64,10 +73,22 @@ body{
     border: 1px solid black;
     border-radius: 5px;
 }
- 
-    
-.mid {
-    display: block;
-    margin: auto;
-    margin-top: 16px;
-}
+
+@media only screen and (max-width: 672px) {
+     .container{
+        width: 80vw;
+        height: 43vw;
+     }
+     h1{
+        font-size: 16px;
+     }
+     #messageInp{
+        width: 63vw;
+     }
+     .message{
+        margin: 15px 14px;
+        font-size: 13px;
+     }
+  }
+
+
