@@ -7,7 +7,7 @@ const io = require('socket.io')(8000,{
 const users = {};
 // if new user joined let other people know.
 io.on('connection',socket=>{
-    socket.on('new-user-joined', name=>{
+    socket.on('new-user-joined',name=>{
         users[socket.id] = name;
         socket.broadcast.emit('user-joined',name);
     });
