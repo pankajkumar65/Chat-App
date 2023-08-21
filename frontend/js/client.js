@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000');
+const socket = io('https://pankaj-chatapp-u8l6.onrender.com');
 
 // get Dom elements in receving js variable
 const form = document.getElementById("send-container");
@@ -6,8 +6,8 @@ const messageinput = document.getElementById("messageInp");
 const messageContainer = document.querySelector(".container");
 
 //Audio that will play on receving message
-const tingMsg =  new Audio("../ting.mp3");
-const tick = new Audio("../tick.mp3");
+const tingMsg =  new Audio("./ting.mp3");
+const tick = new Audio("./tick.mp3");
 
 //function which will append to the container
 const append = (message,position)=>{
@@ -35,7 +35,7 @@ socket.on('receive',data=>{
 
 // if useer leaves the chat, append the info into to the container
 socket.on('left',name=>{
-    append(`${name} : left the chat!`,'mid');
+    append(`${name} : left the chat!`,'right');
 })
  
 // if the form get submitted send server the message
@@ -45,5 +45,4 @@ form.addEventListener("submit",(e)=>{
     append(`you : ${message}`,"right");
     socket.emit('send',message);
     messageinput.value = '';
-   //  tick.play();  
 })
