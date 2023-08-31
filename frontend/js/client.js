@@ -16,6 +16,7 @@ const append = (message,position)=>{
     messageElement.classList.add("message");
     messageElement.classList.add(position);
     messageContainer.append(messageElement);
+    tingMsg.play();
 }
 
 //Ask new user for his name and let the server know
@@ -25,13 +26,11 @@ socket.emit("new-user-joined",name);
 // if new user joins, receive  the event from the server
 socket.on('user-joined',name=>{
     append(`${name}: joined the chat`,'right') 
-    tingMsg.play();
 })
 
 //if server sends the message, receive it
 socket.on('receive',data=>{
     append(`${data.name} : ${data.message}`,'left');
-    tingMsg.play();
 })
 
 // if useer leaves the chat, append the info into to the container
@@ -46,5 +45,4 @@ form.addEventListener("submit",(e)=>{
     append(`you : ${message}`,"right");
     socket.emit('send',message);
     messageinput.value = '';
-    tick.play();
 })
