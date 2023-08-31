@@ -45,4 +45,5 @@ form.addEventListener("submit",(e)=>{
     append(`you : ${message}`,"right");
     socket.emit('send',message);
     messageinput.value = '';
+    tick.play();
 })
