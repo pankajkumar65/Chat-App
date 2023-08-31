@@ -13,7 +13,7 @@ io.on('connection',socket=>{
     });
 
     // if someone sends the messsge brosdcast to the other ppeople.
-    socket.on('send',message=>{
+    socket.on('send',message=>{ 
         socket.broadcast.emit('receive',{message: message, name: users[socket.id]})
     });
 

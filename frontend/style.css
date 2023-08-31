@@ -73,6 +73,9 @@ h1{
     border: 1px solid black;
     border-radius: 5px;
 }
+.Name{
+    font-weight: bold;
+}
 
 @media only screen and (max-width: 672px) {
      .container{
