@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000');
+const socket = io('https://pankaj-chatapp-u8l6.onrender.com');
 
 // get Dom elements in receving js variable
 const form = document.getElementById("send-container");
