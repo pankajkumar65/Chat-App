@@ -100,7 +100,7 @@ h1{
   @media only screen and (max-width: 400px){
     .container{
         width: 80vw;
-        height: 70vh;
+        height: 60vh;
      }
      .message{
          max-width: 60vw;
